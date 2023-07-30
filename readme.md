@@ -1,2 +1,0 @@
-
-hello samples from mac.
