@@ -1,2 +1,2 @@
 
-hello samples from mac
+hello samples from mac.
