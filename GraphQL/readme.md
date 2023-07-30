@@ -37,3 +37,10 @@ product(id: $id){
 
 GRAPHQL VARIABLES
 {"id" :1 }
+
+Postman Post Query:
+http://localhost:5125/graphql
+Body => Raw =Josn
+  {
+  "query": "query { product(id: 2) { name quantity } }"
+}
