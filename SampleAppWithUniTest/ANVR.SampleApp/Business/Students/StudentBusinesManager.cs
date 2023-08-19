@@ -1,14 +1,13 @@
-using ANVR.SampleApp.Models;
 using ANVR.SampleApp.Repository;
 
-namespace ANVR.SampleApp.Business;
+namespace ANVR.SampleApp.Business.Students;
 
-internal sealed class BusinessManager : IBusinessManager
+internal sealed class StudentBusinesManager : IStudentBusinessManager
 {
-    private readonly IRepository _repository;
+    private readonly IRepository<Student> _repository;
 
     #region Constructor
-    public BusinessManager(IRepository repository)
+    public StudentBusinesManager(IRepository<Student> repository)
     {
         _repository = repository;
     }
@@ -24,7 +23,7 @@ internal sealed class BusinessManager : IBusinessManager
     public async Task<Student> GetStudentAsync(int id)
     {
         var student = await _repository.Get(id);
-        return (Student)student;
+        return student;
     }
 
     /// <summary>

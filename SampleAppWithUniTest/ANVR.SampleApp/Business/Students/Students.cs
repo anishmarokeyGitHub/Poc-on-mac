@@ -1,6 +1,6 @@
 using ANVR.SampleApp.Repository.Data;
 
-namespace ANVR.SampleApp.Models;
+namespace ANVR.SampleApp.Business.Students;
 
 /// <summary>
 /// 

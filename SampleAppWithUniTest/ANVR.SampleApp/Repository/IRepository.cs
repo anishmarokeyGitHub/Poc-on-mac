@@ -2,7 +2,7 @@ using ANVR.SampleApp.Repository.Data;
 
 namespace ANVR.SampleApp.Repository;
 
-public interface IRepository
+public interface IRepository<IEntity>
 {
     /// <summary>
     /// Get by Id

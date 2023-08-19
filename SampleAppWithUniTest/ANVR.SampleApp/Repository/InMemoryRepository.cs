@@ -2,7 +2,7 @@ using ANVR.SampleApp.Repository.Data;
 using System;
 namespace ANVR.SampleApp.Repository;
 
-internal sealed class InMemoryRepository : IRepository
+internal sealed class InMemoryRepository<IEntity> : IRepository<IEntity>
 {
     #region  Private variables
 
@@ -52,7 +52,7 @@ internal sealed class InMemoryRepository : IRepository
         {
             return Task.FromResult(_inMemoryDataSource.GetEntity(id));
         }
-        catch
+        catch 
         {
             throw new RepositoryException("Get Entity Failed");
         }
@@ -65,15 +65,15 @@ internal sealed class InMemoryRepository : IRepository
     /// <typeparam name="TEntity"></typeparam>
     /// <returns></returns>
 
-    public Task<bool> Set(int id, IEntity entity)
+    public Task<bool> Set(int id, IEntity entity)  
     {
         try
         {
             _inMemoryDataSource.AddEntity(id, entity);
         }
-        catch
+        catch 
         {
-            throw new RepositoryException("Set Entity Failed");
+             throw new RepositoryException("Set Entity Failed");
         }
 
         return Task.FromResult(true);

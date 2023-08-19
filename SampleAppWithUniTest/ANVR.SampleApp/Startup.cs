@@ -1,5 +1,5 @@
-using ANVR.SampleApp.Business;
-using ANVR.SampleApp.Repository;
+using ANVR.SampleApp.Business.Students;
+using ANVR.SampleApp.Business.Teacher;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ANVR.SampleApp;
@@ -16,8 +16,8 @@ public class Startup
     public static IServiceProvider ConfigureServices()
     {
         var services = new ServiceCollection();
-        services.AddBusiness();
-        services.AddRepository();
+        services.AddStudentBusiness();
+        services.AddTeacherBusiness();
 
         return services.BuildServiceProvider();
     }

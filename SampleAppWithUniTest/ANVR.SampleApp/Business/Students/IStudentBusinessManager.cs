@@ -1,13 +1,11 @@
-using ANVR.SampleApp.Models;
-
-namespace ANVR.SampleApp.Business;
+namespace ANVR.SampleApp.Business.Students;
 
 /// <summary>
 /// 
 /// </summary> <summary>
 /// 
 /// </summary>
-public interface IBusinessManager
+public interface IStudentBusinessManager
 {
     /// <summary>
     /// 
