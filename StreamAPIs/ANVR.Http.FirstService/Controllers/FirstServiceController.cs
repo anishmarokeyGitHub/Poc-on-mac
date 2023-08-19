@@ -1,3 +1,4 @@
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ANVR.Http.FirstService.Controllers;
@@ -24,13 +25,47 @@ public class FirstServiceController : ControllerBase
         {
             string responseBody = await response.Content.ReadAsStringAsync();
             // Process the response body
-            
+
             return Ok("Hell0 from first service" + responseBody);
         }
         else
         {
             // Handle error cases
             return StatusCode((int)response.StatusCode);
-        } 
+        }
+    }
+
+    [HttpGet("getfromftream")]
+    public async Task<IActionResult> GetFromStream()
+    {
+        using (HttpClient httpClient = new HttpClient())
+        {
+            string url = "http://localhost:5126/SecondService/getfromstream"; // Replace with your API endpoint URL
+
+            // Create a MemoryStream with sample data
+            byte[] data = Encoding.UTF8.GetBytes("Hello, StreamContent!");
+            using (MemoryStream memoryStream = new MemoryStream(data))
+            {
+                // Create StreamContent from the FileStream
+                StreamContent streamContent = new StreamContent(memoryStream);
+                streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                
+                // Send POST request
+                HttpResponseMessage response = await httpClient.PostAsync(url, streamContent);
+               
+
+                // Handle the response
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    return Ok("Response: " + responseBody);
+                }
+                else
+                {
+                    return Ok("Request failed with status code: " + response.StatusCode);
+                }
+            }
+        }
+
     }
 }
