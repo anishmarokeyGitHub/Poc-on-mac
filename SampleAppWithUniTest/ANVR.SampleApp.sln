@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANVR.SampleApp", "ANVR.SampleApp\ANVR.SampleApp.csproj", "{BE26227E-2FBC-4F33-B44C-AE173E883240}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANVR.SampleApp.UnitTests", "ANVR.SampleApp.UnitTests\ANVR.SampleApp.UnitTests.csproj", "{D17AE515-8C1C-4789-A1B3-21EB64C6DF48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{BE26227E-2FBC-4F33-B44C-AE173E883240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE26227E-2FBC-4F33-B44C-AE173E883240}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE26227E-2FBC-4F33-B44C-AE173E883240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17AE515-8C1C-4789-A1B3-21EB64C6DF48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17AE515-8C1C-4789-A1B3-21EB64C6DF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17AE515-8C1C-4789-A1B3-21EB64C6DF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17AE515-8C1C-4789-A1B3-21EB64C6DF48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
