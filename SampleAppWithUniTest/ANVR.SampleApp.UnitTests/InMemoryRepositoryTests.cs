@@ -35,15 +35,14 @@ public class InMemoryRepositoryTests
 
     }
 
-    // [Test]
-    // public async Task Add_Item_With_AlreadyAddedKey_ShouldThrowException()
-    // {
-    //     // Act & Assert: Use Assert.ThrowsAsync to check if the expected exception is thrown
-    //     var exception = await Assert.ThrowsAsync<RepositoryException>( () => Task.FromResult(tr));
-
-    //     // Additional assertions on the exception, if needed
-    //     Assert.AreEqual("Expected error message", exception.Message);
-    // }
+    [Test]
+    public async Task Add_Item_With_AlreadyAddedKey_ShouldThrowException()
+    {
+        // Act & Assert: Use Assert.ThrowsAsync to check if the expected exception is thrown
+       // Using a method as a delegate
+        Assert.ThrowsAsync<RepositoryException>(async () => await _repository.Set(1, new MockStudent()));
+    
+    }
 
 
     [Test]
