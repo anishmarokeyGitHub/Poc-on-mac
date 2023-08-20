@@ -27,7 +27,9 @@ coverage_path=$(echo "$output" | grep -o -m 1 '/[^[:space:]]*coverage\.cobertura
 if [ -n "$coverage_path" ]; then
   echo "Coverage report file path: $coverage_path"
 else
-  echo "Coverage report file path not found."
+  # Print the message in red color and exit
+  echo -e "\e[31mCoverage report file path not found. Exiting...\e[0m"
+  exit 1  # Exit the script with an error code
 fi
 
 # Target directory for the coverage report
