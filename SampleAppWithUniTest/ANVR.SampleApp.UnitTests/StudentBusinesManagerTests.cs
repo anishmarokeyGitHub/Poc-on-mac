@@ -19,7 +19,7 @@ public class StudentBusinesManagerTests
     {
         // Arrange
 
-        var studentToReturn = new Student { Id = 1, Name = "John" };
+        var studentToReturn = new Student { Id = 1, Name = "John", Age = 30 };
         _repositoryMock.Setup(repo => repo.Get(It.IsAny<int>())).ReturnsAsync(studentToReturn);
 
         var studentManager = new StudentBusinesManager(_repositoryMock.Object);
