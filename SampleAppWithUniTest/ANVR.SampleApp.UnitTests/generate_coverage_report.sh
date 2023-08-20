@@ -13,19 +13,28 @@ if [ -d "$oldCoverageReportPath" ]; then
 fi
 
 # Run dotnet test with code coverage collection
-dotnet test --collect:"XPlat Code Coverage"
+# dotnet test --collect:"XPlat Code Coverage"
+# echo "Attachments $Attachments"
 
-echo "What is guid generated in TestResults: "
-read var_testtesult_guid 
 
-# Relative path to the new coverage report XML file
-coverageReportRelativePath="TestResults/${var_testtesult_guid}/coverage.cobertura.xml"
+# Run the test command and capture the output
+output=$(dotnet test --collect:"XPlat Code Coverage" 2>&1)
+
+# Extract the coverage report file path using grep and sed
+coverage_path=$(echo "$output" | grep -o -m 1 '/[^[:space:]]*coverage\.cobertura\.xml' | sed -E 's|^[[:space:]]*||')
+
+# Print the coverage report file path
+if [ -n "$coverage_path" ]; then
+  echo "Coverage report file path: $coverage_path"
+else
+  echo "Coverage report file path not found."
+fi
 
 # Target directory for the coverage report
 targetDir="coveragereport"
 
 # Generate HTML report using reportgenerator
-~/.dotnet/tools/reportgenerator -reports:"$coverageReportRelativePath" -targetdir:"$targetDir" -reporttypes:Html
+~/.dotnet/tools/reportgenerator -reports:"$coverage_path" -targetdir:"$targetDir" -reporttypes:Html
 
 echo "Code coverage report generated at $targetDir"
 
