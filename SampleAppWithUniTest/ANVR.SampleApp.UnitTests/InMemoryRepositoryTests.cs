@@ -26,12 +26,29 @@ public class InMemoryRepositoryTests
         var newMockStudent = new MockStudent { Id = 4, Name = "SampleName4" };
 
         // Act
-        _repository.Set(4, newMockStudent);
+        await _repository.Set(4, newMockStudent);
 
         // Assert 
         var result = await _repository.Get(4);
         
         Assert.That(4, Is.EqualTo(result.Id));
+
+    }
+
+    [Test]
+    public async Task Delete_Item_To_Mock()
+    {
+        // Arrange
+        var newMockStudent = new MockStudent { Id = 4, Name = "SampleName4" };
+
+        // Act
+        await _repository.Set(4, newMockStudent);
+
+        // Assert 
+        await _repository.Delete(4);
+        var result = await _repository.Get(4);
+        
+        Assert.IsNull(result);
 
     }
 }
