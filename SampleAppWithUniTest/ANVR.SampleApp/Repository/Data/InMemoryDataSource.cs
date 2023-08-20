@@ -21,7 +21,12 @@ public class InMemoryDataSource<IEntity> : Dictionary<int, IEntity>
     /// <param name="entity"></param>
     public void AddEntity(int id, IEntity entity)
     {
-        entities[id] = entity;
+        if (!entities.ContainsKey(id))
+        {
+            entities[id] = entity;
+        }
+        else
+         throw new Exception();
     }
 
     /// <summary>
@@ -45,8 +50,12 @@ public class InMemoryDataSource<IEntity> : Dictionary<int, IEntity>
     /// <returns></returns>
     public bool DeleEntiry(int id)
     {
-        entities.Remove(id);
-        return true;
+        if (entities.ContainsKey(id))
+        {
+            entities.Remove(id);
+            return true;
+        }
+        throw new KeyNotFoundException();
     }
     #endregion
 }

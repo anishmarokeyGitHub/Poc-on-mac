@@ -65,18 +65,18 @@ internal sealed class InMemoryRepository<IEntity> : IRepository<IEntity>
     /// <typeparam name="TEntity"></typeparam>
     /// <returns></returns>
 
-    public Task<bool> Set(int id, IEntity entity)  
+    public async Task<bool> Set(int id, IEntity entity)  
     {
         try
         {
             _inMemoryDataSource.AddEntity(id, entity);
         }
-        catch 
+        catch
         {
              throw new RepositoryException("Set Entity Failed");
         }
 
-        return Task.FromResult(true);
+        return true;
     }
     #endregion
 }
