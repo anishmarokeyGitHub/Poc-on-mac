@@ -40,7 +40,7 @@ public class InMemoryDataSource<IEntity> : Dictionary<int, IEntity>
         {
             return entity;
         }
-        return default(IEntity);
+        throw new KeyNotFoundException();
     }
 
     /// <summary>
