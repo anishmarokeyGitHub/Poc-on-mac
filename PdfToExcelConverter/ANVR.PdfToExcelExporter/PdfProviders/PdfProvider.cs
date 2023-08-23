@@ -26,9 +26,9 @@ internal sealed class PdfProvider : IPdfProvider
     /// 
     /// </summary>
     /// <returns></returns>
-    public string ReadPdf()
+    public string ExtractTextFromPdf()
     {
-        StringBuilder pdfText = new StringBuilder();
+        StringBuilder pdfText = new();
 
         using (PdfReader pdfReader = new PdfReader(_pdfOptions.Value.FilePath))
         {
