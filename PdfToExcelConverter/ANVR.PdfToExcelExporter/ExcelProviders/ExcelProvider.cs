@@ -44,24 +44,15 @@ internal sealed class ExcelProvider : IExcelProvider
     #region  private members
     private bool DeleteIfPathExists()
     {
-        try
+        if (!string.IsNullOrEmpty(_excelOptions.Value.ExcelPath) && File.Exists(_excelOptions.Value.ExcelPath))
         {
-            if (!string.IsNullOrEmpty(_excelOptions.Value.ExcelPath) && File.Exists(_excelOptions.Value.ExcelPath))
-            {
-                File.Delete(_excelOptions.Value.ExcelPath);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            File.Delete(_excelOptions.Value.ExcelPath);
+            return true;
         }
-        catch (Exception ex)
+        else
         {
-            Console.WriteLine("An error occurred while deleting the file: " + ex.Message);
             return false;
         }
     }
-
     #endregion
 }

@@ -7,7 +7,7 @@ public class PdfProviderTests
 {
 
     [Test]
-    public void Test1()
+    public void ReadDatafromPdf()
     {
         // Arrange
         string expectedText = "This is a sample PDF text.\nWith a new line.";
