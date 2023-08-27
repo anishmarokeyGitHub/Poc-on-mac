@@ -6,7 +6,6 @@ namespace ANVR.PdfToExcelExporter.ExcelProviders;
 internal sealed class ExcelProvider : IExcelProvider
 {
 
-
     #region Private Members
     private readonly IOptions<ExcelOptions> _excelOptions;
     #endregion

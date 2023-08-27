@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANVR.PdfToExcelExporter", "ANVR.PdfToExcelExporter\ANVR.PdfToExcelExporter.csproj", "{B658CF0B-EBE3-4B1C-B4FD-BD400B4F431C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANVR.PdfToExcelExporter.UniTests", "ANVR.PdfToExcelExporter.UniTests\ANVR.PdfToExcelExporter.UniTests.csproj", "{5B2B6255-5513-49C0-A2A2-21636B3C4189}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B658CF0B-EBE3-4B1C-B4FD-BD400B4F431C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B658CF0B-EBE3-4B1C-B4FD-BD400B4F431C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B658CF0B-EBE3-4B1C-B4FD-BD400B4F431C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2B6255-5513-49C0-A2A2-21636B3C4189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2B6255-5513-49C0-A2A2-21636B3C4189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2B6255-5513-49C0-A2A2-21636B3C4189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2B6255-5513-49C0-A2A2-21636B3C4189}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
