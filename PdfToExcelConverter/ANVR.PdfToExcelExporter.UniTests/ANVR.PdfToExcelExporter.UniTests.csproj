@@ -18,7 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Update="MockData/sample.pdf">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-</ItemGroup>
+  </ItemGroup>
 </Project>
