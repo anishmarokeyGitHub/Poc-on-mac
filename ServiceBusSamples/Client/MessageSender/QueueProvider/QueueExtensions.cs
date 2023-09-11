@@ -4,6 +4,11 @@ using Microsoft.Extensions.Options;
 
 namespace MessageSender.QueueProvider;
 
+/// <summary>
+/// Service Extension for Queue
+/// </summary> <summary>
+/// 
+/// </summary>
 public static class QueueExtensions
 {
     public static IServiceCollection AddQueuesServices(this IServiceCollection services, Action<QueueOptions> options)

@@ -2,6 +2,11 @@ using Azure.Messaging.ServiceBus;
 
 namespace MessageSender.QueueProvider.Abstractions;
 
+
+/// <summary>
+/// Contract to Build Queue
+/// </summary>
+
 public interface IQueueBuilder
 {
     /// <summary>

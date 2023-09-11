@@ -4,6 +4,9 @@ using Microsoft.Extensions.Options;
 
 namespace MessageSender.QueueProvider;
 
+/// <summary>
+/// Queue Builder 
+/// </summary>
 internal sealed class QueueBuilder : IQueueBuilder
 {
     #region  Private Variables
@@ -16,10 +19,18 @@ internal sealed class QueueBuilder : IQueueBuilder
         _options = options;
     }
     #endregion
+
+    #region IQueueBuilder
+
+    /// <summary>
+    /// Build Service Bus client
+    /// </summary>
+    /// <returns></returns>
     public ServiceBusClient Build()
     {
         return new ServiceBusClient(_options.Value.ConnectionString);
     }
+    #endregion
 
     
 }
