@@ -44,3 +44,5 @@ Body => Raw =Josn
   {
   "query": "query { product(id: 2) { name quantity } }"
 }
+
+turorial: https://www.google.com/search?q=graphql+asp.net+core+6&sca_esv=584187651&tbm=vid&sxsrf=AM9HkKlYsiBMH6yruLWpwL7wjgPQPv_MWQ:1700540793501&source=lnms&sa=X&ved=2ahUKEwi_trCPoNSCAxW-SmwGHau4DgAQ_AUoAnoECAEQBA&biw=1378&bih=758&dpr=2#fpstate=ive&vld=cid:55540bb0,vid:gEApqKuWvSg,st:0
